@@ -24,7 +24,6 @@ int main() {
             srand( time( NULL ) ) ;
 
             printf( "Your score is : %d \n", score ) ;
-            printf( "%d", number ) ;
             while( score > 0  ) {
                 printf( "Guess  the wining number ( %d - %d ) : \n", min , max ) ;
                 scanf( "%d", &guess ) ;
