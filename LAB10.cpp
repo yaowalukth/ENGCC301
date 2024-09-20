@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+
+    char Word[ 100 ] ;
+    printf( "Enter your word : " ) ;
+    scanf( "%s", Word ) ;
+    printf( "Your word is : %s \n", Word ) ;
+  
+    int e = strlen( Word ) - 1 ;
+    printf( "Size of Word is : %d \n", e + 1 ) ;
+
+    int s = 0 ;
+    int n = 1 ;
+    while ( s < e ) {
+        if( Word[ s ] != Word[ e ] ) {
+            n = 0 ;
+            break;
+        } else {
+            s ++ ;
+            e -- ;
+        }//end if-else
+    }//end while
+
+    if( n == 0 ) {
+        printf( "Not Pass \n" ) ;
+    } else {
+        printf( "Pass \n" ) ;
+    }//end if-else
+
+    return 0 ;
+}//end main function
