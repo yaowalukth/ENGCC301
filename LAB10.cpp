@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 int main() {
 
@@ -7,14 +8,14 @@ int main() {
     printf( "Enter your word : " ) ;
     scanf( "%s", Word ) ;
     printf( "Your word is : %s \n", Word ) ;
-  
+
     int e = strlen( Word ) - 1 ;
     printf( "Size of Word is : %d \n", e + 1 ) ;
 
-    int s = 0 ;
-    int n = 1 ;
+    int s = 0 ; //ค่าเริ่มต้นของตำอักษรแรก
+    int n = 1 ; //ค่าบูลีน
     while ( s < e ) {
-        if( Word[ s ] != Word[ e ] ) {
+        if( tolower( Word[ s ] ) != tolower( Word[ e ] ) ) {
             n = 0 ;
             break;
         } else {
