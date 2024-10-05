@@ -1,17 +1,31 @@
-##include <stdio.h>
+#include <stdio.h>
 
 int main() {
-    int number ;
-    printf( "Enter value: " ) ;
-    scanf( "%d" , &number ) ;
-    printf( "Series:" ) ;
-    if(number % 2 == 1) {
-        for(int i = 1 ; i <= number ; i += 2 ) {
-            printf( " %d ", i ) ;
+    
+    int num ;
+    printf( "Plese enter your number : " ) ;
+    scanf( "%d" , &num ) ;
+    if(num % 2 != 0 ) {
+        for( int a = 1 ; a <= num ; a++ ) {
+            for (int b = 1 ; b <= num ; b++ ) {
+                if( b == num - a + 1 ){
+                     printf( "1" );
+                }else{
+                    printf( "0" ) ;
+                }
+            }
+            printf( "\n" ) ;
         }
-    }else if(number % 2 != 1) {
-        for(int i = number ; i >= 0 ; i -= 2) {
-            printf( " %d " , i ) ;
+    }else{
+        for( int a = 1 ; a <= num ; a++ ) {
+            for (int b = 1 ; b <= num ; b++ ) {
+                if( b == a  ){
+                     printf( "1" );
+                }else{
+                    printf( "0" ) ;
+                }
+            }
+            printf( "\n" ) ;
         }
     }
     return 0 ;
