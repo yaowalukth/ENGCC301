@@ -7,7 +7,7 @@ int main() {
     int play ;
     int playAgain ;
 
-    printf( "Do you want to play game? ( 1 = play , -1 = exit ) \n" ) ;
+    printf( "Do you want to play game (1=play, -1=exit) \n" ) ;
     scanf( "%d", &play ) ;
 
     if( play == 1 ) {
@@ -21,50 +21,42 @@ int main() {
             number = rand() % 100 + 1 ;
             srand( time( NULL ) ) ;
 
-            printf( "(score is : %d) \n", score ) ;
+            printf( "(Score=%d) \n", score ) ;
             while( score > 0  ) {
-                printf( "Guess  the wining number ( %d - %d ) : \n", min , max ) ;
+                printf( "Guess  the wining number (%d-%d) : ", min , max ) ;
                 scanf( "%d", &guess ) ;
-                
                 if( guess < 1 || guess > 100 ) {
-                    printf( "Please enter number between 1 -100 \n" ) ;
+                    printf( "Your guess is out of the current bounds (%d-%d)! Try again. \n", min , max ) ;
                     continue ;
                 }
 
                 if( guess == number ) {
-                    printf( "That is correct! The winning number is %d \n", guess ) ;
+                    printf( "That is correct! The winning number is %d. \n", guess ) ;
                     printf( "Score this game: %d \n", score ) ;
                     break ;
                 } else {
                     score -= 10 ;
                     if( score <= 0 ) {
                         printf( "Your point are all gone \n" ) ;
-                        printf( "The correct number is : %d \n", number ) ;
+                        printf( "The correct number is : %d. \n", number ) ;
                         break ;
                     }
                     if( guess < number ) {
                         if( guess > min ) {
                             min = guess + 1 ;
                         }
-                        printf( "Sorry, the winning number is higher than %d. (Score = %d)\n", guess, score ) ;
+                        printf( "Sorry, the winning number is HIGHER than %d. (Score=%d)\n", guess, score ) ;
                     } else {
                         if( guess < max ) {
                             max = guess -1 ;
                         }
-                        printf( "Sorry, the winning number is lower than %d. (Score = %d)\n", guess, score ) ;
+                        printf( "Sorry, the winning number is LOWER than %d. (Score=%d)\n", guess, score ) ;
                     }
                 }
             }
-            printf( "Do you want to playagain? ( 1 = playAgain , -1 = exit ) \n" ) ;
+            printf( "Do you want to playagain (1=play, -1=exit): \n" ) ;
             scanf( "%d", &playAgain ) ;
-            if( playAgain != 1 ) {
-                printf( "Thank you for playing \n" ) ;
-            } else {
-                printf( "Let's play" ) ;
-            }
         }while( playAgain == 1 ) ;
-    } else {
-        printf( "Thank you \n" ) ;
-    }
+    } 
     return 0 ;
 }
