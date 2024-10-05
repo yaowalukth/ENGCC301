@@ -45,14 +45,12 @@ int main() {
                         if( guess > min ) {
                             min = guess + 1 ;
                         }
-                        printf( "Sorry,the winning number is HIGHER than %d. \n", guess ) ;
-                        printf( "(Score=%d)", score ) ;
+                        printf( "Sorry,the winning number is HIGHER than %d. (Score=%d) \n", guess , score ) ;
                     } else {
                         if( guess < max ) {
                             max = guess -1 ;
                         }
-                        printf( "Sorry,the winning number is LOWER than %d.\n", guess ) ;
-                        printf( "(Score=%d)", score ) ;
+                        printf( "Sorry,the winning number is LOWER than %d. (Score=%d)\n", guess , score ) ;
                     }
                 }
             }
