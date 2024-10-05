@@ -3,9 +3,9 @@
 int main() {
     int score = 0 ;
     printf( "Input your score : " ) ;
-    scanf( "%d" , &score ) ;
+    scanf( "%d", &score ) ;
     printf( "Grade : " ) ;
-    switch ( score/5 ){
+    switch ( score/5 ) {
         default :
             printf( "F" ) ;
             break ;
