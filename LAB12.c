@@ -9,7 +9,7 @@ struct student {
     float Score3 ;
     float Score4 ;
     float Score5 ;
-} typedef s ;//end struct
+} typedef s ;
 
 void Grade( float score ) {
     printf( " " ) ;
@@ -29,32 +29,31 @@ void Grade( float score ) {
         printf( "D" ) ;
     } else {
         printf( "F" ) ;
-    }//end if-else  
-}//end function
+    }
+}
 
 float Average ( s student ) {
     float result = 0 ;
     result = student.Score1 + student.Score2 + student.Score3 + student.Score4 + student.Score5 ;
     result = result / 5 ;
-    printf( "Average scores : %.2f \n", result ) ;
+    printf( "Average scores : %.1f \n", result ) ;
     return result ;
-}//end function
+}
 
 int main () {
 
-    int num ;
-    printf( "Enter the details of student : " ) ;
-    scanf( "%d", &num ) ;
-
+    printf( "Enter the details of 3 student : \n" ) ;
+    
     int i ;
+    int num = 3 ;
     s student[ num ] ;
-    for( i = 0 ; i < num ; i ++ ) {
-        printf( "Student%d : \n", i + 1 ) ;
+    for( i = 1 ; i < num ; i ++ ) {
+        printf( "Student%d: \n", i ) ;
 
-        getchar() ;
         printf( "Name : " ) ;
-        gets( student[ i ].Name ) ;
-
+        fgets( student[i].Name , sizeof(student[i].Name) , stdin ) ; 
+        student[i].Name[strcspn(student[i].Name, "\n")] = 0 ;
+        
         printf( "ID : " ) ;
         scanf( "%s", student[ i ].ID ) ;
 
@@ -72,14 +71,13 @@ int main () {
 
         printf( "Scores in Subject5 : " ) ;
         scanf( "%f", &student[ i ].Score5 ) ;
-    }//end for loop
+    }
 
-    printf( "\nStudent Details : %d \n", num ) ;
     for( i = 0 ; i < num ; i ++ ) {
         printf( "Student%d \n", i + 1 ) ;
         printf( "Name : %s \n", student[ i ].Name ) ;
         printf( "ID : %s \n", student[ i ].ID ) ;
-        printf( "Scores : %.2f %.2f %.2f %.2f %.2f \n", student[ i ].Score1 , student[ i ].Score2 , student[ i ].Score3 , student[ i ].Score4 , student[ i ].Score5 ) ;
+        printf( "Scores : %.0f %.0f %.0f %.0f %.0f \n", student[ i ].Score1 , student[ i ].Score2 , student[ i ].Score3 , student[ i ].Score4 , student[ i ].Score5 ) ;
         
         printf( "Grades : " ) ;
         Grade( student[ i ].Score1 ) ;
@@ -91,6 +89,6 @@ int main () {
 
         Average( student[ i ] ) ;
         printf( "\n" ) ;
-    }//end for loop
+    }
     return 0 ;
-}//end function
+}
