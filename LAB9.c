@@ -5,22 +5,22 @@ int main() {
     int n = 0 ;
     int i = 0 ;
 
-    printf( "Enter Array Size : " ) ;
+    printf( "Enter n : " ) ;
     scanf( "%d", &n ) ;
     int Num[ n ] ;
-    printf( "------------------------ \n" ) ;
 
     for( i = 0 ; i < n ; i ++ ) {
-        printf( "Array[%d] : ", i ) ;
+        printf( "Enter value[%d] : ", i ) ;
         scanf( "%d", &Num[ i ] ) ;
     }
-    printf( "------------------------ \n" ) ;
 
+    printf( "Index: " ) ;
     for( i = 0 ; i < n ; i ++ ) {
-        printf( " %d", Num[ i ] ) ;
+        printf( " %d", i ) ;
     }
-    printf( "\n------------------------ \n" ) ;
 
+    printf( "\n" ) ;
+    printf( "Array: " ) ;
     int m ;
     for( m = 0 ; m < n ; m ++ ) {
         int value = Num[ m ] ;
