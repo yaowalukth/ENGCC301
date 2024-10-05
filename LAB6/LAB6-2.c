@@ -1,18 +1,18 @@
 #include <stdio.h>
+
 int main() {
-    
-    int num ;
-    printf( "Plese enter your number : " ) ;
-    scanf( "%d" , &num ) ;
-    for( int a = 1 ; a <= num ; a++ ) {
-        for (int b = 1 ; b <= num ; b++ ) {
-            if( (num % 2 != 0 && b == num - a + 1 ) || ( num % 2 == 0 && b == a )) {
-                printf( "1" );
-            } else {
-                printf( "0" ) ;
-            }
+    int number ;
+    printf( "Enter value: " ) ;
+    scanf( "%d" , &number ) ;
+    printf( "Series:" ) ;
+    if(number % 2 == 1) {
+        for(int i = 1 ; i <= number ; i += 2 ) {
+            printf( "%d ", i ) ;
         }
-        printf( "\n" ) ;
+    }else if(number % 2 != 1) {
+        for(int i = number ; i >= 0 ; i -= 2) {
+            printf( "%d " , i ) ;
+        }
     }
     return 0 ;
 }
