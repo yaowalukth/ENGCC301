@@ -1,42 +1,31 @@
 #include <stdio.h>
+#include <math.h>
 
-int main() {
-
-    int n = 0 ;
-    int i = 0 ;
-
-    printf( "Enter n : " ) ;
+int isPrime( int num ) { if( num < 2 ) return 0 ;
+    for ( int i = 2 ; i <= sqrt( num ) ; i++ ) {
+    if ( num % i == 0 )
+    return 0 ; 
+}//end function
+    return 1 ; }
+  int main() {
+    int n ;
+    printf( "Enter N : " ) ; 
     scanf( "%d", &n ) ;
-    int Num[ n ] ;
-
-    for( i = 0 ; i < n ; i ++ ) {
+    int arr[ n ] ; for( int i = 0 ; i < n ; i++ ){
         printf( "Enter value[%d] : ", i ) ;
-        scanf( "%d", &Num[ i ] ) ;
-    }
-
-    printf( "Index: " ) ;
-    for( i = 0 ; i < n ; i ++ ) {
-        printf( " %d", i ) ;
-    }
-
+        scanf("%d", &arr[i] ) ;
+    }//end function
+    printf("Index:  ") ;
+    for (int i = 0 ; i < n ; i++ ){
+        printf( "%2d ", i ) ;
+    }//end for
+    printf( "\n" );
+    printf( "Array:  " );
+    for( int i = 0 ; i < n ; i++ ) { if ( isPrime( arr[i] ) )
+    printf( "%2d ", arr[i] ) ; 
+    else
+    printf( "%2s ", "#" ) ; 
+    }//end if
     printf( "\n" ) ;
-    printf( "Array: " ) ;
-    int m ;
-    for( m = 0 ; m < n ; m ++ ) {
-        int value = Num[ m ] ;
-        int k = 1 ;
-        int j ;
-        for( j = 2 ; j * j <= value ; j ++ ) {
-            if( value % j == 0 ) {
-                k = 0 ;
-                break ;
-            }
-        }
-        if( k == 1 ) {
-            printf( " %d", value ) ;
-        } else {
-            printf( " #" ) ;
-        }
-    }   
     return 0 ;
 }
