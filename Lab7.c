@@ -7,7 +7,7 @@ int main() {
     int play ;
     int playAgain ;
 
-    printf( "Do you want to play game (1=play, -1=exit) \n" ) ;
+    printf( "Do you want to play game (1=play, -1=exit) : \n" ) ;
     scanf( "%d", &play ) ;
 
     if( play == 1 ) {
@@ -23,7 +23,7 @@ int main() {
 
             printf( "(Score=%d) \n", score ) ;
             while( score > 0  ) {
-                printf( "Guess  the wining number (%d-%d) : ", min , max ) ;
+                printf( "Guess  the wining number (%d-%d): ", min , max ) ;
                 scanf( "%d", &guess ) ;
                 if( guess < 1 || guess > 100 ) {
                     printf( "Your guess is out of the current bounds (%d-%d)! Try again. \n", min , max ) ;
@@ -45,12 +45,12 @@ int main() {
                         if( guess > min ) {
                             min = guess + 1 ;
                         }
-                        printf( "Sorry, the winning number is HIGHER than %d. (Score=%d)\n", guess, score ) ;
+                        printf( "Sorry,the winning number is HIGHER than %d. (Score=%d)\n", guess, score ) ;
                     } else {
                         if( guess < max ) {
                             max = guess -1 ;
                         }
-                        printf( "Sorry, the winning number is LOWER than %d. (Score=%d)\n", guess, score ) ;
+                        printf( "Sorry,the winning number is LOWER than %d. (Score=%d)\n", guess, score ) ;
                     }
                 }
             }
