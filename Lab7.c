@@ -7,7 +7,7 @@ int main() {
     int play ;
     int playAgain ;
 
-    printf( "Do you want to play game (1=play, -1=exit) : \n" ) ;
+    printf( "Do you want to play game (1=play, -1=exit) : (Score=100)\n" ) ;
     scanf( "%d", &play ) ;
 
     if( play == 1 ) {
@@ -21,7 +21,6 @@ int main() {
             number = rand() % 100 + 1 ;
             srand( time( NULL ) ) ;
 
-            printf( "(Score=%d) \n", score ) ;
             while( score > 0  ) {
                 printf( "Guess  the wining number (%d-%d): ", min , max ) ;
                 scanf( "%d", &guess ) ;
