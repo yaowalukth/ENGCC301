@@ -5,11 +5,13 @@
 int main() {
 
     int play ;
+    int playAgain ;
 
     printf( "Do you want to play game (1=play, -1=exit) : (Score=100)\n" ) ;
     scanf( "%d", &play ) ;
 
-    while( play == 1 ) {
+    if( play == 1 ) {
+        do {
             int number ;
             int guess ;
             int score = 100 ;
@@ -20,9 +22,9 @@ int main() {
             srand( time( NULL ) ) ;
 
             while( score > 0  ) {
-                printf( "Guess the winning number (%d-%d): ", min , max ) ;
+                printf( "Guess the wining number (%d-%d): ", min , max ) ;
                 scanf( "%d", &guess ) ;
-                if( guess < 1 && guess > 100 ) {
+                if( guess < 1 || guess > 100 ) {
                     printf( "Your guess is out of the current bounds (%d-%d)! Try again. \n", min , max ) ;
                     continue ;
                 }
@@ -34,8 +36,8 @@ int main() {
                 } else {
                     score -= 10 ;
                     if( score <= 0 ) {
-                        printf( "Your point are all gone \n" ) ;
-                        printf( "The correct number is : %d. \n", number ) ;
+                        printf( "Your point are all gone\n" ) ;
+                        printf( "The correct number is : %d.\n", number ) ;
                         break ;
                     }
                     if( guess < number ) {
@@ -47,12 +49,13 @@ int main() {
                         if( guess < max ) {
                             max = guess -1 ;
                         }
-                        printf( "Sorry, the winning number is LOWER than %d. (Score=%d)\n", guess , score ) ;
+                        printf( "Sorry, the winning number is LOWER than %d. (Score=%d) \n", guess , score ) ;
                     }
                 }
             }
-            printf( "Do you want to play game (1=play, -1=exit) : \n" ) ;
+            printf( "Do you want to play game (1=play, -1=exit): \n" ) ;
             scanf( "%d", &playAgain ) ;
-        } 
+        }while( playAgain == 1 ) ;
+    } 
     return 0 ;
 }
