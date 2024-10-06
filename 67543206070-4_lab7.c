@@ -10,8 +10,8 @@ int main() {
     printf( "Do you want to play game (1=play, -1=exit) : (Score=100)\n" ) ;
     scanf( "%d", &play ) ;
 
-    if( play == 1 ) {
-        do {
+    if( play == 1 ) { 
+        while {
             int number ;
             int guess ;
             int score = 100 ;
@@ -25,7 +25,7 @@ int main() {
                 printf( "Guess the winning number (%d-%d): ", min , max ) ;
                 scanf( "%d", &guess ) ;
                 if( guess < 1 && guess > 100 ) {
-                    printf( "Your guess is out of the current bounds (%d-%d)! Try again. \n", min , max ) ;
+                    printf( "Your guess is out of the current bounds (%d-%d)! Try again.\n", min , max ) ;
                     continue ;
                 }
 
@@ -55,7 +55,8 @@ int main() {
             }
             printf( "Do you want to play game (1=play, -1=exit) : \n" ) ;
             scanf( "%d", &playAgain ) ;
-        }while( playAgain == 1 ) ;
-    } 
+        }
+    } else {
+        printf( "Thank you" ) ;
     return 0 ;
 }
