@@ -12,7 +12,7 @@ struct student {
 } typedef s ;
 
 void Grade( float score ) {
-    printf( " " ) ;
+    printf( "" ) ;
     if ( score >= 80 ) {
         printf( "A" ) ;
     } else if ( score >= 75 &&score < 80 ) {
@@ -45,13 +45,13 @@ int main () {
     printf( "Enter the details of 3 student : \n" ) ;
     
     int i ;
-    int num = 3 ;
-    s student[ num ] ;
-    for( i = 1 ; i < num ; i ++ ) {
+    s student[ 3 ] ;
+    for( i = 1 ; i < 3 ; i ++ ) {
         printf( "Student%d: \n", i ) ;
 
+        getchar() ;
         printf( "Name : " ) ;
-        fgets( student[i].Name , sizeof(student[i].Name) , stdin ) ; 
+        fgets( student[i].Name , 20 , stdin ) ; 
         student[i].Name[strcspn(student[i].Name, "\n")] = 0 ;
         
         printf( "ID : " ) ;
@@ -73,11 +73,11 @@ int main () {
         scanf( "%f", &student[ i ].Score5 ) ;
     }
 
-    for( i = 0 ; i < num ; i ++ ) {
+    for( i = 0 ; i < 3 ; i ++ ) {
         printf( "Student%d \n", i + 1 ) ;
         printf( "Name : %s \n", student[ i ].Name ) ;
         printf( "ID : %s \n", student[ i ].ID ) ;
-        printf( "Scores : %.0f %.0f %.0f %.0f %.0f \n", student[ i ].Score1 , student[ i ].Score2 , student[ i ].Score3 , student[ i ].Score4 , student[ i ].Score5 ) ;
+        printf( "Scores : %2.0f %2.0f %2.0f %2.0f %2.0f \n", student[ i ].Score1 , student[ i ].Score2 , student[ i ].Score3 , student[ i ].Score4 , student[ i ].Score5 ) ;
         
         printf( "Grades : " ) ;
         Grade( student[ i ].Score1 ) ;
