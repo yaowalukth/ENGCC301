@@ -5,13 +5,11 @@
 int main() {
 
     int play ;
-    int playAgain ;
 
     printf( "Do you want to play game (1=play, -1=exit) : (Score=100)\n" ) ;
     scanf( "%d", &play ) ;
 
-    if( play == 1 ) {
-        do {
+    while( play == 1 ) {
             int number ;
             int guess ;
             int score = 100 ;
@@ -55,7 +53,6 @@ int main() {
             }
             printf( "Do you want to play game (1=play, -1=exit) : \n" ) ;
             scanf( "%d", &playAgain ) ;
-        }while( playAgain == 1 ) ;
-    } 
+        } 
     return 0 ;
 }
