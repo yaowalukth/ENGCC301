@@ -11,32 +11,6 @@ struct student {
     float Score5 ;
 } typedef s ;
 
-void Grade( float score ) {
-    if ( score >= 80 ) {
-        printf( "A " ) ;
-    } else if ( score >= 75 &&score < 80 ) {
-        printf( "B+ " ) ;
-    } else if ( score >= 70 &&score < 75 ) {
-        printf( "B " ) ;
-    } else if ( score >= 65 &&score < 70 ) {
-        printf( "C+ " ) ;
-    } else if ( score >= 60 &&score < 65 ) {
-        printf( "C " ) ;
-    } else if ( score >= 55 &&score < 60 ) {
-        printf( "D+ " );
-    } else if ( score >= 50 &&score < 55 ) {
-        printf( "D " ) ;
-    } else {
-        printf( "F " ) ;
-    }
-}
-
-float Average ( s student ) {
-    float result = (student.Score1 + student.Score2 + student.Score3 + student.Score4 + student.Score5) / 5;
-    printf( "Average scores : %.1f \n", result ) ;
-    return result ;
-}
-
 int main () {
 
     printf( "Enter the details of 3 student :\n" ) ;
@@ -88,4 +62,30 @@ int main () {
         printf( "\n" ) ;
     }
     return 0 ;
+}
+
+void Grade( float score ) {
+    if ( score >= 80 ) {
+        printf( "A " ) ;
+    } else if ( score >= 75 &&score < 80 ) {
+        printf( "B+ " ) ;
+    } else if ( score >= 70 &&score < 75 ) {
+        printf( "B " ) ;
+    } else if ( score >= 65 &&score < 70 ) {
+        printf( "C+ " ) ;
+    } else if ( score >= 60 &&score < 65 ) {
+        printf( "C " ) ;
+    } else if ( score >= 55 &&score < 60 ) {
+        printf( "D+ " );
+    } else if ( score >= 50 &&score < 55 ) {
+        printf( "D " ) ;
+    } else {
+        printf( "F " ) ;
+    }
+}
+
+float Average ( s student ) {
+    float result = (student.Score1 + student.Score2 + student.Score3 + student.Score4 + student.Score5) / 5;
+    printf( "Average scores : %.1f \n", result ) ;
+    return result ;
 }
