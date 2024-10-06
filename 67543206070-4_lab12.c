@@ -33,50 +33,48 @@ void Grade( float score ) {
 
 float Average ( s student ) {
     float result = ( student.Score1 + student.Score2 + student.Score3 + student.Score4 + student.Score5 ) / 5 ;
-    printf( "Average scores : %.1f \n", result ) ;
+    printf( "Average Scores : %.1f \n", result ) ;
     return result ;
 }
 
 int main () {
-
-    printf( "Enter the details of 3 student :\n" ) ;
     
     int i ;
     s student[ 3 ] ;
     for( i = 0 ; i < 3 ; i ++ ) {
-        printf( "Student%d: \n", i + 1 ) ;
+        printf( "Enter the details of student %d:\n", i + 1 ) ;
 
-        printf( "Name : " ) ;
+        printf( "Name: " ) ;
         fgets( student[i].Name , sizeof(student[i].Name) , stdin ) ; 
         student[i].Name[strcspn(student[i].Name, "\n")] = 0 ;
         
-        printf( "ID : " ) ;
+        printf( "ID: " ) ;
         scanf( "%s", student[ i ].ID ) ;
 
-        printf( "Scores in Subject1 : " ) ;
+        printf( "Scores in Subject1: " ) ;
         scanf( "%f", &student[ i ].Score1 ) ;
 
-        printf( "Scores in Subject2 : " ) ;
+        printf( "Scores in Subject2: " ) ;
         scanf( "%f", &student[ i ].Score2 ) ;
 
-        printf( "Scores in Subject3 : " ) ;
+        printf( "Scores in Subject3: " ) ;
         scanf( "%f", &student[ i ].Score3 ) ;
 
-        printf( "Scores in Subject4 : " ) ;
+        printf( "Scores in Subject4: " ) ;
         scanf( "%f", &student[ i ].Score4 ) ;
 
-        printf( "Scores in Subject5 : " ) ;
+        printf( "Scores in Subject5: " ) ;
         scanf( "%f", &student[ i ].Score5 ) ;
         getchar() ;
     }
 
     for( i = 0 ; i < 3 ; i ++ ) {
-        printf( "Student%d \n", i + 1 ) ;
-        printf( "Name : %s \n", student[ i ].Name ) ;
-        printf( "ID : %s \n", student[ i ].ID ) ;
-        printf( "Scores : %.0f %.0f %.0f %.0f %.0f \n", student[ i ].Score1 , student[ i ].Score2 , student[ i ].Score3 , student[ i ].Score4 , student[ i ].Score5 ) ;
+        printf( "Student %d:\n", i + 1 ) ;
+        printf( "Name: %s\n", student[ i ].Name ) ;
+        printf( "ID: %s\n", student[ i ].ID ) ;
+        printf( "Scores: %.0f %.0f %.0f %.0f %.0f\n", student[ i ].Score1 , student[ i ].Score2 , student[ i ].Score3 , student[ i ].Score4 , student[ i ].Score5 ) ;
         
-        printf( "Grades : " ) ;
+        printf( "Grades: " ) ;
         Grade( student[ i ].Score1 ) ;
         Grade( student[ i ].Score2 ) ;
         Grade( student[ i ].Score3 ) ;
