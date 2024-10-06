@@ -53,7 +53,7 @@ int main() {
                     }
                 }
             }
-            printf( "Do you want to play (1=play, -1=exit): \n" ) ;
+            printf( "Do you want to play (1=play, -1=exit) : \n" ) ;
             scanf( "%d", &playAgain ) ;
         }while( playAgain == 1 ) ;
     } 
