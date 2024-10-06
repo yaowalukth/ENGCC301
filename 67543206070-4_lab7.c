@@ -22,13 +22,8 @@ int main() {
             srand( time( NULL ) ) ;
 
             while( score > 0  ) {
-                printf( "Guess the wining number (%d-%d): ", min , max ) ;
+                printf( "Guess the winning number (%d-%d):", min , max ) ;
                 scanf( "%d", &guess ) ;
-                if( guess < 1 || guess > 100 ) {
-                    printf( "Your guess is out of the current bounds (%d-%d)! Try again. \n", min , max ) ;
-                    continue ;
-                }
-
                 if( guess == number ) {
                     printf( "That is correct! The winning number is %d.\n", guess ) ;
                     printf( "Score this game: %d\n", score ) ;
@@ -44,16 +39,16 @@ int main() {
                         if( guess > min ) {
                             min = guess + 1 ;
                         }
-                        printf( "Sorry, the winning number is HIGHER than %d. (Score=%d) \n", guess , score ) ;
+                        printf( "Sorry, the winning number is HIGHER than %d. (Score=%d)\n", guess , score ) ;
                     } else {
                         if( guess < max ) {
                             max = guess -1 ;
                         }
-                        printf( "Sorry, the winning number is LOWER than %d. (Score=%d) \n", guess , score ) ;
+                        printf( "Sorry, the winning number is LOWER than %d. (Score=%d)\n", guess , score ) ;
                     }
                 }
             }
-            printf( "Do you want to play game (1=play, -1=exit): \n" ) ;
+            printf( "Do you want to play game (1=play, -1=exit) : \n" ) ;
             scanf( "%d", &playAgain ) ;
         }while( playAgain == 1 ) ;
     } 
