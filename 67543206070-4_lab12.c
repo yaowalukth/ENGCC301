@@ -12,47 +12,44 @@ struct student {
 } typedef s ;
 
 void Grade( float score ) {
-    printf( "" ) ;
     if ( score >= 80 ) {
-        printf( "A" ) ;
+        printf( "A " ) ;
     } else if ( score >= 75 &&score < 80 ) {
-        printf( "B+" ) ;
+        printf( "B+ " ) ;
     } else if ( score >= 70 &&score < 75 ) {
-        printf( "B" ) ;
+        printf( "B " ) ;
     } else if ( score >= 65 &&score < 70 ) {
-        printf( "C+" ) ;
+        printf( "C+ " ) ;
     } else if ( score >= 60 &&score < 65 ) {
-        printf( "C" ) ;
+        printf( "C " ) ;
     } else if ( score >= 55 &&score < 60 ) {
-        printf( "D+" );
+        printf( "D+ " );
     } else if ( score >= 50 &&score < 55 ) {
-        printf( "D" ) ;
+        printf( "D " ) ;
     } else {
-        printf( "F" ) ;
+        printf( "F " ) ;
     }
 }
 
 float Average ( s student ) {
-    float result = 0 ;
-    result = student.Score1 + student.Score2 + student.Score3 + student.Score4 + student.Score5 ;
-    result = result / 5 ;
+    float result = (student.Score1 + student.Score2 + student.Score3 + student.Score4 + student.Score5) / 5;
     printf( "Average scores : %.1f \n", result ) ;
     return result ;
 }
 
 int main () {
 
-    printf( "Enter the details of 3 student : \n" ) ;
+    printf( "Enter the details of 3 student :\n" ) ;
     
     int i ;
     s student[ 3 ] ;
     for( i = 1 ; i < 3 ; i ++ ) {
-        printf( "Student%d: \n", i ) ;
+        printf( "Student%d: \n", i + 1 ) ;
 
         getchar() ;
         printf( "Name : " ) ;
-        fgets( student[i].Name , 20 , stdin ) ; 
-        student[i].Name[strcspn(student[i].Name, "\n")] = 0 ;
+        fgets(student[i].Name, sizeof(student[i].Name), stdin);
+        student[i].Name[strcspn(student[i].Name, "\n")] = 0;
         
         printf( "ID : " ) ;
         scanf( "%s", student[ i ].ID ) ;
@@ -77,7 +74,7 @@ int main () {
         printf( "Student%d \n", i + 1 ) ;
         printf( "Name : %s \n", student[ i ].Name ) ;
         printf( "ID : %s \n", student[ i ].ID ) ;
-        printf( "Scores : %2.0f %2.0f %2.0f %2.0f %2.0f \n", student[ i ].Score1 , student[ i ].Score2 , student[ i ].Score3 , student[ i ].Score4 , student[ i ].Score5 ) ;
+        printf( "Scores : %.0f %.0f %.0f %.0f %.0f \n", student[ i ].Score1 , student[ i ].Score2 , student[ i ].Score3 , student[ i ].Score4 , student[ i ].Score5 ) ;
         
         printf( "Grades : " ) ;
         Grade( student[ i ].Score1 ) ;
