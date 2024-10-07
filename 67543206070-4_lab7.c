@@ -22,10 +22,10 @@ int main() {
             srand( time( NULL ) ) ;
 
             while( score > 0  ) {
-                printf( "Guess the winning number (%d-%d):", min , max ) ;
+                printf( "Guess the winning number (%d-%d): ", min , max ) ;
                 scanf( "%d", &guess ) ;
                 if( guess < min || guess > max ) {
-                    printf( "Your guess is out of the current bounds (%d-%d)! Try again. \n", min , max ) ;
+                    printf( "Your guess is out of the current bounds (%d-%d)! Try again.\n", min , max ) ;
                     continue ;
                 }
 
