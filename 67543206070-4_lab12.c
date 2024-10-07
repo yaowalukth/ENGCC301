@@ -27,7 +27,7 @@ void Grade( float score ) {
     } else if ( score >= 50 &&score < 55 ) {
         printf( " D" ) ;
     } else {
-        printf( "F " ) ;
+        printf( " F" ) ;
     }
 }
 
@@ -68,7 +68,7 @@ int main () {
         getchar() ;
     }
 
-    printf( "/n" ) ;
+    printf( "\n" ) ;
     for( i = 0 ; i < 3 ; i ++ ) {
         printf( "Student %d:\n", i + 1 ) ;
         printf( "Name: %s\n", student[ i ].Name ) ;
